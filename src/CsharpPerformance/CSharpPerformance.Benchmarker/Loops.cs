@@ -9,8 +9,7 @@ namespace CSharpPerformance.Benchmarker;
 [RankColumn(NumeralSystem.Arabic)]
 public class Loops
 {
-    string[] heroes = 
-    {
+    public string[] Heroes =  {
         "Spider-Man, Gambit, Wolverine, Cyclops, Storm, Rogue, Nightcrawler, " +
         "Colossus, Iceman, Bishop, Kitty Pryde, Shadowcat, Rogue, Psylocke, Jubilee," +
         " Dazzler, Sunfire, Colossus, Nightcrawler,pider-Man, Gambit, Wolverine, Cyclops, Storm, Rogue, Nightcrawler, " +
@@ -50,24 +49,24 @@ public class Loops
     [Benchmark()]
     public void ForLoop()
     {
-        var lenght = heroes.Length;
+        var lenght = Heroes.Length;
     
         for(var i = 0; i < lenght; i++)
         {
-            var x= heroes[i];
+            var x= Heroes[i];
         }
     }
     
     [Benchmark()]
     public void ForEachLoop()
     {
-        var lenght = heroes.Length;
+        var lenght = Heroes.Length;
 
-        foreach (var hero in heroes)
+        foreach (var hero in Heroes)
         {
             for(var i = lenght - 1; i >= 0; i--)
             {
-                var x= heroes[i];
+                var x= Heroes[i];
             }
         }
     }
